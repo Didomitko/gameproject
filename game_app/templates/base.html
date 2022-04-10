@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Petstagram</title>
+    <title>Brainstorm</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="https://pluspng.com/img-png/instagram-png-instagram-png-icon-1024.png">
+    <link rel="icon" type="image/png" href="https://render.fineartamerica.com/images/rendered/medium/print/8/8/break/images/artworkimages/medium/1/brainstorm-johan-swanepoel.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
@@ -32,16 +32,16 @@
 
             {% if request.user.is_authenticated  %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    <a class="nav-link" href="{% url 'welcome' %}">Welcome</a>
                 </li>
-                {% if not hide_additional_nav_items %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create pet' %}">Add Pet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create pet photo' %}">Add Photo</a>
-                    </li>
-                {% endif %}
+{#                {% if not hide_additional_nav_items %}#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{% url 'create pet' %}">Add Pet</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{% url 'create pet photo' %}">Add Photo</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
                 <li class="nav-item">
 
                     <a class="nav-link" href="{% url 'profile details' request.user.id %}">Profile</a>
@@ -62,7 +62,7 @@
 {% endblock %}
 <!-- Page Footer -->
 <footer class="fixed-bottom card-footer ">
-    <div>@2022 Python Web Basics Workshop at SoftUni</div>
+    <div>@2022 AKRAD/DIDO</div>
 </footer>
 <!-- End Page Footer -->
 

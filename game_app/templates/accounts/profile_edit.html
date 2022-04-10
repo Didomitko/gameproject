@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <form method="post" action="{% url 'edit profile' %}">
+            <form method="post" action="{% url 'edit profile' profile.pk %}">
 
                 {{ form }}
                 {% csrf_token %}
 
-                <button class="btn btn-primary mt-2" type="submit">Edit</button>
+                <button class="btn btn-primary mt-2" type="{% url 's' %}">Edit</button>
             </form>
         </div>
         <div class="col-lg-3"></div>

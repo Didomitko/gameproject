@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,15 +18,15 @@
 <div class="container mb-5 mt-2">
     <div class="jumbotron">
         <img style="width: 80%"
-             src="{% static 'pics/brainstorm.jpg' %}" alt="">
+             src="https://render.fineartamerica.com/images/rendered/medium/print/8/8/break/images/artworkimages/medium/1/brainstorm-johan-swanepoel.jpg" alt="">
         <div class="position-sticky">
             <h1 class="display-4">Нещо се обърка</h1>
             <p class="lead">Обърнете се към администратора или опитайте пак!!</p>
             <hr class="my-4">
             <div class="row col-lg-6">
 
-                <!-- Button to show when profile is NOT created -->
-                <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Направи профил</a>
+
+                <a href="{% url 'index' %}" class="btn btn-lg btn-secondary">Направи профил</a>
             </div>
         </div>
     </div>

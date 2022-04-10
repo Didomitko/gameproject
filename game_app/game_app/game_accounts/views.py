@@ -7,7 +7,7 @@ from game_app.game_accounts.forms import CreateProfileForm
 from game_app.game_accounts.models import Profile
 from game_app.common.view_mixins import RedirectToWelcome
 from django.views.generic import TemplateView, ListView
-
+from django.views.generic import edit as edit_profile
 
 # from petstagram.main.models import PetPhoto
 
@@ -27,7 +27,7 @@ class UserLoginView(LoginView):
         return super().get_success_url()
 
 
-class EditProfileView(DetailView):
+class EditProfileView(edit_profile.UpdateView):
     model = Profile
     template_name = 'accounts/profile_edit.html'
     context_object_name = 'profile'
@@ -72,8 +72,8 @@ class HomeView(RedirectToWelcome, TemplateView):
         return context
 
 
-class WelcomeView(ListView):
-    # model = GameResult
+class WelcomeView(HomeView):
+
     template_name = 'main/welcome.html'
     context_object_name = 'welcome'
 
@@ -83,5 +83,6 @@ class WelcomeView(ListView):
 #
 #
 class DeleteProfileView(DeleteView):
+    model = Profile
     template_name = 'accounts/profile_delete.html'
-    context_object_name = 'delete'
+    success_url = reverse_lazy('welcome')
