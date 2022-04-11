@@ -8,4 +8,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('game_app.game_accounts.urls')),
 ]
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

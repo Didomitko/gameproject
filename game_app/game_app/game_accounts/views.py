@@ -14,7 +14,7 @@ from django.views.generic import edit as edit_profile
 class UserRegisterView(RedirectToWelcome, CreateView):
     form_class = CreateProfileForm
     template_name = 'accounts/profile_create.html'
-    success_url = reverse_lazy('welcome')
+    success_url = reverse_lazy('index')
 
 
 class UserLoginView(LoginView):
@@ -72,8 +72,8 @@ class HomeView(RedirectToWelcome, TemplateView):
         return context
 
 
-class WelcomeView(HomeView):
-
+class WelcomeView(ListView):
+    model = Profile
     template_name = 'main/welcome.html'
     context_object_name = 'welcome'
 
@@ -85,4 +85,4 @@ class WelcomeView(HomeView):
 class DeleteProfileView(DeleteView):
     model = Profile
     template_name = 'accounts/profile_delete.html'
-    success_url = reverse_lazy('welcome')
+    success_url = reverse_lazy('index')

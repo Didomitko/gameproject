@@ -27,12 +27,12 @@
                         <h5><u>Description:</u> {{ profile.description }}</h5>
                     {% endif %}
                 </div>
-                <p class="mt-2">Total Images: {{ total_pet_photos_count }}</p>
-                <p class="mt-2">Total Likes: {{ total_likes_count }}</p>
-                {% if is_owner %}
-{#                    <a href="{% url "edit profile" %}" class="btn btn-primary">Edit</a>#}
-{#                    <a href="{% url "delete profile" %}" class="btn btn-danger">Delete</a>#}
-                {% endif %}
+{#                <p class="mt-2">Total Images: {{ total_pet_photos_count }}</p>#}
+{#                <p class="mt-2">Total Likes: {{ total_likes_count }}</p>#}
+
+                <a href="{% url 'edit profile' profile.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'delete profile' profile.pk %}" class="btn btn-danger">Delete</a>
+
             </div>
         </div>
     </div>

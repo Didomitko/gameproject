@@ -1,7 +1,10 @@
+import os
+
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
+
 
 from game_app.game_accounts.models import Profile
 from game_app.common.helps import BootstrapFormMixin
@@ -118,12 +121,15 @@ class EditProfileForm(BootstrapFormMixin, ModelForm):
 
 
 class DeleteProfileForm(forms.ModelForm):
-    def save(self, commit=True):
-        # taka ne e dobre trqbwa da e s signali za da trie snimkite na potrebitelq
-        pets = list(self.instance.pet_set.all())
-        # ResultProfil.objects.filter(tagged_result__in=result).delete()
-        self.instance.delete()
 
+    def save(self, commit=True):
+        # if commit: в моменте коминт е дефаулт, ако скаме да се избира дали тва да се изтрие тофава се слафа иф
+        image_path = self.instance.image.path
+        self.instance.delete()
+        # Result.objects.all().delete()
+        os.remove(image_path)
+        get_user_model().delete()
+        Profile.user.delete()
         return self.instance
 
     class Meta:
