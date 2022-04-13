@@ -80,7 +80,7 @@ class EditProfileForm(BootstrapFormMixin, ModelForm):
         self.initial['gender'] = Profile.DO_NOT_SHOW
 
     class Meta:
-        model = get_user_model()
+        model = Profile
         fields = '__all__'
         widgets = {
             'first_name': forms.TextInput(
