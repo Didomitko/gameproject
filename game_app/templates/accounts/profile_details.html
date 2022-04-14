@@ -11,7 +11,6 @@
                     <h5><u>Name:</u> {{ profile.first_name }}{{ profile.last_name }}</h5>
                     <!-- If Date of Birth -->
                     {% if profile.data_of_birth %}
-{#                    <h5><u>Birthdate:</u> July 15, 1999</h5>#}
                         <h5><u>Birthdate:</u> {{ profile.data_of_birth }}</h5>
                     {% endif %}
                     <!-- If Email -->
@@ -45,16 +44,13 @@
         <h2 class="text-center">My Games</h2>
     <div class="container mb-4">
         <div class="d-flex justify-content-start mb-5">
-            <!-- Info for First Pet -->
-{#            {% for pet in pets %}#}
+            <!-- Info for Game -->
+{#            {% for game in games %}#}
 {#                <div style="width: 18rem;">#}
-{#                    <h5>{{ pet.name }}</h5>#}
-{#                    {% if pet.data_of_birth %}#}
-{#                        <p class="mt-2">{{ pet.age }}</p>#}
-{#                    {% endif %}#}
-{#                    {% if is_owner %}#}
-{#                        <a href="{% url 'edit pet' pet.pk %}" class="btn btn-primary">Edit</a>#}
-{#                        <a href="{% url 'delete pet' pet.pk %}" class="btn btn-danger">Delete</a>#}
+{#                    <h5>{{ game.name }}</h5>#}
+{#                    {% if game.result %}#}
+{#                        <p class="mt-2">{{ game.type }}</p>#}
+{#
 {#                    {% endif %}#}
 {#                </div>#}
 {#            {% endfor %}#}

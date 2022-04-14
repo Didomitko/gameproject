@@ -16,7 +16,7 @@
 <body style="background-color:#406775">
 
 <!--{{ request.clicks_count }}-->
-<!--{{ request.last_viewed_pet_photos }}-->
+<!--{{ request.last_game }}-->
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg  navbar-light bg-warning" style="margin-bottom:2%">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -33,16 +33,24 @@
             {% if request.user.is_authenticated  %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'welcome' %}">Welcome</a>
+
                 </li>
                 {% if not hide_additional_nav_items %}
                     <li class="nav-item">
                         <a class="nav-link" href="">New Game</a>
+
+
                     </li>
                 {% endif %}
                 <li class="nav-item">
 
-                    <a class="nav-link" href="{% url 'profile details' request.user.id %}">Profile</a>
+                    <a class="nav-link" href="{% url 'profile details' request.user.id %}"> <img src="{{ profile.picture }}"  alt="Profile"></a>
 
+                </li>
+                <li class="nav-item">
+
+                    
+                    <a class="nav-link" href="{% url 'logout user' request.user.id %}">Logout</a>
                 </li>
             {% endif %}
         </ul>
