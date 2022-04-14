@@ -67,6 +67,7 @@ class Profile(models.Model):
     #     return f'{self.first_name} {self.last_name}'
 
     picture = models.URLField()
+    # photo = cloudinary_models.CloudinaryField('image') ----from cloudinary
 
     data_of_birth = models.DateField(
         null=True,
