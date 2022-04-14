@@ -1,3 +1,17 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 
-# Register your models here.
+from game_app.game_accounts.models import Profile
+
+UserModel = get_user_model()
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name')
+
+
+@admin.register(UserModel)
+class UserAdmin(admin.ModelAdmin):
+    pass
+
