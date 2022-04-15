@@ -135,4 +135,3 @@ class DeleteProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ()
-

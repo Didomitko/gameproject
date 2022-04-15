@@ -26,8 +26,8 @@
                         <h5><u>Description:</u> {{ profile.description }}</h5>
                     {% endif %}
                 </div>
-{#                <p class="mt-2">Total Images: {{ total_games }}</p>#}
-{#                <p class="mt-2">Total Likes: {{ total_win_games }}</p>#}
+                <p class="mt-2">Total games: {{ total_games }}</p>
+                <p class="mt-2">Total wins: {{ total_win_games }}</p>
 
                 <a href="{% url 'edit profile' profile.pk %}" class="btn btn-primary">Edit</a>
                 <a href="{% url 'delete profile' profile.pk %}" class="btn btn-danger">Delete</a>
@@ -50,7 +50,7 @@
 {#                    <h5>{{ game.name }}</h5>#}
 {#                    {% if game.result %}#}
 {#                        <p class="mt-2">{{ game.type }}</p>#}
-{#
+
 {#                    {% endif %}#}
 {#                </div>#}
 {#            {% endfor %}#}

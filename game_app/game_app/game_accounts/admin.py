@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 
-from game_app.game_accounts.models import Profile
+from game_app.game_accounts.models import Profile, GameQuests
 
 UserModel = get_user_model()
 
@@ -13,5 +13,10 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(UserModel)
 class UserAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(GameQuests)
+class GameAdmin(admin.ModelAdmin):
     pass
 
