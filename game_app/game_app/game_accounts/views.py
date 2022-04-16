@@ -69,3 +69,9 @@ class UserLogoutView(LogoutView):
     model = Profile
     template_name = 'main/home_page.html'
     success_url = reverse_lazy('index')
+
+
+class ErrorLogin(ListView):
+    model = Profile
+    template_name = 'main/401_error.html'
+    success_url = reverse_lazy('index')
